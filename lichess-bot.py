@@ -22,7 +22,6 @@ import traceback
 import itertools
 import glob
 import platform
-import test_bot.lichess
 from lib.config import load_config, Configuration
 from lib.conversation import Conversation, ChatLine
 from lib.timer import Timer, seconds, msec, hours, to_seconds
