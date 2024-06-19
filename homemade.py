@@ -35,8 +35,8 @@ class Napoleon(ExampleEngine):
         if len(list(board.legal_moves)) == 1:
             return PlayResult(list(board.legal_moves)[0], None)
         else:
-            depth = 50
-            exploration = 0.25
+            depth = 100
+            exploration = 0.5
             napoleon = keras.saving.load_model('Napoleon.keras')
             global memory
             if memory != None:
