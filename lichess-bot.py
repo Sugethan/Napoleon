@@ -3,6 +3,7 @@ import argparse
 import chess
 import chess.pgn
 from chess.variant import find_variant
+import lib.config
 from lib import engine_wrapper, model, lichess, matchmaking
 import json
 import logging
@@ -21,7 +22,7 @@ import yaml
 import traceback
 import itertools
 import glob
-import platform
+import test_bot.lichess
 from lib.config import load_config, Configuration
 from lib.conversation import Conversation, ChatLine
 from lib.timer import Timer, seconds, msec, hours, to_seconds
@@ -36,6 +37,7 @@ from queue import Empty
 from multiprocessing.pool import Pool
 from typing import Optional, Union, TypedDict
 from types import FrameType
+
 MULTIPROCESSING_LIST_TYPE = MutableSequence[model.Challenge]
 LICHESS_TYPE = Union[lichess.Lichess, test_bot.lichess.Lichess]
 POOL_TYPE = Pool
@@ -47,7 +49,7 @@ class PlayGameArgsType(TypedDict, total=False):
     li: LICHESS_TYPE
     control_queue: CONTROL_QUEUE_TYPE
     user_profile: UserProfileType
-    config: Configuration
+    config: lib.config.Configuration
     challenge_queue: MULTIPROCESSING_LIST_TYPE
     correspondence_queue: CORRESPONDENCE_QUEUE_TYPE
     logging_queue: LOGGING_QUEUE_TYPE
@@ -607,7 +609,6 @@ def play_game(li: LICHESS_TYPE,
 
     response = li.get_game_stream(game_id)
     lines = response.iter_lines()
-
     # Initial response of stream will be the full game info. Store it.
     initial_state = json.loads(next(lines).decode("utf-8"))
     logger.debug(f"Initial state: {initial_state}")
@@ -1100,7 +1101,7 @@ def intro() -> str:
     return fr"""
     .   _/|
     .  // o\
-    .  || ._)  lichess-bot {__version__} on {platform.system()} {platform.release()}
+    .  || ._)  lichess-bot {__version__}
     .  //__\
     .  )___(   Play on Lichess with a bot
     """
@@ -1126,7 +1127,7 @@ def start_lichess_bot() -> None:
     logging_configurer(logging_level, args.logfile, auto_log_filename, True)
     logger.info(intro(), extra={"highlighter": None})
 
-    CONFIG = load_config(args.config or "./config.yml")
+    CONFIG = load_config("./config.yml" or args.config )
     logger.info("Checking engine configuration ...")
     with engine_wrapper.create_engine(CONFIG):
         pass
