@@ -12,5 +12,5 @@ Lichess bot equipped with a Monte-Carlo Tree Search engine. The engine has been 
 ## Customize the depth
 You can customize the number of times the MCTS algorithm will run by modifying the `depth` parameter in `homemade.py`. The higher the depth the better the bot will play. However, the bot will play slower.
 
-## Customize the way the bot choose the move it will play.
+## Customize the way the bot selects the move it will play.
 The bot will use both the neural network's evaluations of the moves and the result of the MCTS simulations to decide what move to play. The `exploration` parameter in `homemade.py`, is a number between 0 and 1 that represents the weight of the simulations' result in the bot's decision.
