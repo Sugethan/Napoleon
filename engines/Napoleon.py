@@ -116,8 +116,8 @@ class node:
         value_to_index = {value: idx for idx, value in enumerate(unique_values)}
         
         # Populate the 3D array
-        for i in range(4):
-            for j in range(4):
+        for i in range(8):
+            for j in range(8):
                 value = array[i][j]
                 index = value_to_index[value]
                 channels[i, j, index] = 1
@@ -251,7 +251,6 @@ class MCTS:
     def play_against_opponent(self):
         self.investigate()
         return self.root.choose_son(self.exploration)
-
 
 def get_move(model, board, depth, exploration, memory):
 
