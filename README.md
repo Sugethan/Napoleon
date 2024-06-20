@@ -1,6 +1,9 @@
 # Napoleon
-Lichess bot equipped with a Monte-Carlo Tree Search engine. The engine has been given several positions from the Lichess Elite Database (https://database.nikonoel.fr/). It explored each position using the standard steps of the MCTS (Selection, Expansion, Simulation and Backprogation) guided by an UCT score. The generated data was then used to train the neural network to predict the value of the position and the simulation policy. This cycle has been repeated several times using a VM on Google Cloud Platform. The bridge between the engine and the Lichess API has been cloned from https://github.com/lichess-bot-devs/lichess-bot. 
+Lichess bot equipped with a Monte-Carlo Tree Search engine. The engine has been given several positions from the Lichess Elite Database (https://database.nikonoel.fr/). It explored each position using the standard steps of the MCTS (Selection, Expansion, Simulation and Backprogation) guided by an UCT score. The generated data was then used to train the neural network to predict the value of the position and the simulation policy. This cycle has been repeated several times using a VM on Google Cloud Platform.
 
+The neural network is largely composed of parallel convolutional layers with different kernel sizes to capture features at different scales. However, stacking of convolutional layers was only minimally used because of material constraints. The neural network receive both the current position and the previous position. It uses only the former to evaluate the current position while it uses both inputs to compute the policy.
+
+ The bridge between the engine and the Lichess API has been cloned from https://github.com/lichess-bot-devs/lichess-bot. 
 
 ## Follow the steps of the original repository to run the bot.
 1. Download this repository.
