@@ -238,7 +238,6 @@ class MCTS:
     def investigate(self):
 
         for i in range(self.depth):
-            print("Depth = ", i )
             choosen_node = self.root.selection()
             #print("Selection")
             new_son = choosen_node.expansion()
