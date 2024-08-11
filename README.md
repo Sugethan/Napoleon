@@ -69,7 +69,7 @@ $$ UCB = player * [(1-exploration) \times prediction + exploration \times value]
 
 * Player is 1 if white to play and -1 if black to play.
 * Prediction is the neural network evaluation of the node's position.
-* Value = Is the evaluation from the MCTS' simulations.
+* Value is the evaluation from the MCTS' simulations.
 * Exploration is a parameter between 0 and 1.
 * N is the number of times the father node has been visitied
 * n is the number of times the node has been visited. 
