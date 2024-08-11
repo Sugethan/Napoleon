@@ -4,7 +4,7 @@ Lichess bot equipped with a Monte-Carlo Tree Search engine and a neural network 
 ## Neural Network
 
 ### Input
-The neural network as input a (8, 8, 46) numpy array representating the position to evaluate. 
+The neural network as input a (8, 8, 34) numpy array representating the position to evaluate. 
 
 * 1st-12th channels are boards only containing the positions of a piece type (white pawns, black pawns, white queen, black queen, etc.). A piece belonging to the player to white is marked with +1 while black pieces are marked by -1.
 * The 13th to 24th channels are boards that contain the squares attacked by a specific piece type. Each time a square is attacked by a piece, its array element is incremented with 1 or -1 depending of the piece's color.
