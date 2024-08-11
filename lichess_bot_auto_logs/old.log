@@ -1,0 +1,344 @@
+2024-08-11 19:36:34,622 __main__ (lichess-bot.py:1128) INFO 
+    .   _/|
+    .  // o\
+    .  || ._)  lichess-bot 2024.6.18.2
+    .  //__\
+    .  )___(   Play on Lichess with a bot
+    
+2024-08-11 19:36:34,646 lib.config (config.py:254) DEBUG Config:
+token: logger
+url: https://lichess.org/
+engine:
+  dir: ./engines/
+  name: Napoleon
+  working_dir: ''
+  protocol: homemade
+  ponder: true
+  polyglot:
+    enabled: false
+    book:
+      standard:
+      - engines/book1.bin
+      - engines/book2.bin
+    min_weight: 1
+    selection: weighted_random
+    max_depth: 20
+  draw_or_resign:
+    resign_enabled: false
+    resign_score: -1000
+    resign_for_egtb_minus_two: true
+    resign_moves: 3
+    offer_draw_enabled: true
+    offer_draw_score: 0
+    offer_draw_for_egtb_zero: true
+    offer_draw_moves: 10
+    offer_draw_pieces: 10
+  online_moves:
+    max_out_of_book_moves: 0
+    max_retries: 2
+    chessdb_book:
+      enabled: false
+      min_time: 20
+      move_quality: good
+      min_depth: 20
+    lichess_cloud_analysis:
+      enabled: false
+      min_time: 20
+      move_quality: best
+      max_score_difference: 50
+      min_depth: 20
+      min_knodes: 0
+    lichess_opening_explorer:
+      enabled: false
+      min_time: 20
+      source: masters
+      player_name: ''
+      sort: winrate
+      min_games: 10
+    online_egtb:
+      enabled: false
+      min_time: 20
+      max_pieces: 7
+      source: lichess
+      move_quality: best
+  lichess_bot_tbs:
+    syzygy:
+      enabled: false
+      paths:
+      - engines/syzygy
+      max_pieces: 7
+      move_quality: best
+    gaviota:
+      enabled: false
+      paths:
+      - engines/gaviota
+      max_pieces: 5
+      min_dtm_to_consider_as_wdl_1: 120
+      move_quality: best
+  homemade_options: null
+  uci_options:
+    Move Overhead: 100
+    Threads: 4
+    Hash: 512
+    SyzygyPath: ./syzygy/
+    UCI_ShowWDL: true
+  silence_stderr: false
+abort_time: 180
+fake_think_time: false
+rate_limiting_delay: 0
+move_overhead: 2000
+max_takebacks_accepted: 0
+quit_after_all_games_finish: false
+correspondence:
+  move_time: 60
+  checkin_period: 300
+  disconnect_time: 150
+  ponder: false
+challenge:
+  concurrency: 1
+  sort_by: first
+  accept_bot: true
+  only_bot: false
+  max_increment: 100
+  min_increment: 0
+  max_base: 1800
+  min_base: 0
+  max_days: .inf
+  min_days: 1
+  variants:
+  - standard
+  time_controls:
+  - rapid
+  - correspondence
+  - blitz
+  modes:
+  - casual
+  - rated
+  bullet_requires_increment: false
+greeting:
+  hello: Hi! I'm {me}. Good luck! Type !help for a list of commands I can respond
+    to.
+  goodbye: Good game!
+  hello_spectators: Hi! I'm {me}. Type !help for a list of commands I can respond
+    to.
+  goodbye_spectators: Thanks for watching!
+matchmaking:
+  allow_matchmaking: true
+  allow_during_games: false
+  challenge_variant: random
+  challenge_timeout: 30
+  challenge_initial_time:
+  - 60
+  - 180
+  challenge_increment:
+  - 1
+  - 2
+  opponent_rating_difference: 6000
+  rating_preference: none
+  opponent_allow_tos_violation: false
+  challenge_mode: random
+  challenge_filter: none
+
+2024-08-11 19:36:34,646 lib.config (config.py:255) DEBUG ====================
+2024-08-11 19:36:34,652 lib.config (config.py:254) DEBUG Config:
+token: logger
+url: https://lichess.org/
+engine:
+  dir: ./engines/
+  name: Napoleon
+  working_dir: /media/sugethan/c21cc79c-13e8-4254-97e4-4f8bb286698f/Git/Napoleon/Napoleon
+  protocol: homemade
+  ponder: true
+  polyglot:
+    enabled: false
+    book:
+      standard:
+      - engines/book1.bin
+      - engines/book2.bin
+    min_weight: 1
+    selection: weighted_random
+    max_depth: 20
+  draw_or_resign:
+    resign_enabled: false
+    resign_score: -1000
+    resign_for_egtb_minus_two: true
+    resign_moves: 3
+    offer_draw_enabled: true
+    offer_draw_score: 0
+    offer_draw_for_egtb_zero: true
+    offer_draw_moves: 10
+    offer_draw_pieces: 10
+  online_moves:
+    max_out_of_book_moves: 0
+    max_retries: 2
+    chessdb_book:
+      enabled: false
+      min_time: 20
+      move_quality: good
+      min_depth: 20
+    lichess_cloud_analysis:
+      enabled: false
+      min_time: 20
+      move_quality: best
+      max_score_difference: 50
+      min_depth: 20
+      min_knodes: 0
+    lichess_opening_explorer:
+      enabled: false
+      min_time: 20
+      source: masters
+      player_name: ''
+      sort: winrate
+      min_games: 10
+    online_egtb:
+      enabled: false
+      min_time: 20
+      max_pieces: 7
+      source: lichess
+      move_quality: best
+    max_depth: .inf
+  lichess_bot_tbs:
+    syzygy:
+      enabled: false
+      paths:
+      - engines/syzygy
+      max_pieces: 7
+      move_quality: best
+    gaviota:
+      enabled: false
+      paths:
+      - engines/gaviota
+      max_pieces: 5
+      min_dtm_to_consider_as_wdl_1: 120
+      move_quality: best
+  homemade_options: null
+  uci_options:
+    Move Overhead: 100
+    Threads: 4
+    Hash: 512
+    SyzygyPath: ./syzygy/
+    UCI_ShowWDL: true
+  silence_stderr: false
+  uci_ponder: false
+abort_time: 180
+fake_think_time: false
+rate_limiting_delay: 0
+move_overhead: 2000
+max_takebacks_accepted: 0
+quit_after_all_games_finish: false
+correspondence:
+  move_time: 60
+  checkin_period: 300
+  disconnect_time: 150
+  ponder: false
+  uci_ponder: false
+challenge:
+  concurrency: 1
+  sort_by: first
+  accept_bot: true
+  only_bot: false
+  max_increment: 100
+  min_increment: 0
+  max_base: 1800
+  min_base: 0
+  max_days: .inf
+  min_days: 1
+  variants:
+  - standard
+  time_controls:
+  - rapid
+  - correspondence
+  - blitz
+  modes:
+  - casual
+  - rated
+  bullet_requires_increment: false
+  block_list: []
+  allow_list: []
+greeting:
+  hello: Hi! I'm {me}. Good luck! Type !help for a list of commands I can respond
+    to.
+  goodbye: Good game!
+  hello_spectators: Hi! I'm {me}. Type !help for a list of commands I can respond
+    to.
+  goodbye_spectators: Thanks for watching!
+matchmaking:
+  allow_matchmaking: true
+  allow_during_games: false
+  challenge_variant: random
+  challenge_timeout: 30
+  challenge_initial_time:
+  - 60
+  - 180
+  challenge_increment:
+  - 1
+  - 2
+  opponent_rating_difference: 6000
+  rating_preference: none
+  opponent_allow_tos_violation: false
+  challenge_mode: random
+  challenge_filter: none
+  block_list: []
+  challenge_days:
+  - null
+  opponent_min_rating: 600
+  opponent_max_rating: 4000
+  overrides: {}
+pgn_directory: null
+pgn_file_grouping: game
+
+2024-08-11 19:36:34,652 lib.config (config.py:255) DEBUG ====================
+2024-08-11 19:36:34,652 __main__ (lichess-bot.py:1131) INFO Checking engine configuration ...
+2024-08-11 19:36:35,558 tensorflow (tpu_cluster_resolver.py:34) DEBUG Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2024-08-11 19:36:35,731 h5py._conv (__init__.py:47) DEBUG Creating converter from 7 to 5
+2024-08-11 19:36:35,731 h5py._conv (__init__.py:47) DEBUG Creating converter from 5 to 7
+2024-08-11 19:36:35,731 h5py._conv (__init__.py:47) DEBUG Creating converter from 7 to 5
+2024-08-11 19:36:35,731 h5py._conv (__init__.py:47) DEBUG Creating converter from 5 to 7
+2024-08-11 19:36:36,346 lib.engine_wrapper (engine_wrapper.py:65) DEBUG Starting engine: ['/media/sugethan/c21cc79c-13e8-4254-97e4-4f8bb286698f/Git/Napoleon/Napoleon/engines/Napoleon']
+2024-08-11 19:36:36,346 __main__ (lichess-bot.py:1134) INFO Engine configuration OK
+2024-08-11 19:36:36,348 urllib3.connectionpool (connectionpool.py:978) DEBUG Starting new HTTPS connection (1): lichess.org:443
+2024-08-11 19:36:36,436 urllib3.connectionpool (connectionpool.py:453) DEBUG https://lichess.org:443 "POST /api/token/test HTTP/1.1" 200 None
+2024-08-11 19:36:36,453 urllib3.connectionpool (connectionpool.py:453) DEBUG https://lichess.org:443 "GET /api/account HTTP/1.1" 200 None
+2024-08-11 19:36:36,453 __main__ (lichess-bot.py:1143) INFO Welcome Napoleon_Engine!
+2024-08-11 19:36:36,454 __main__ (lichess-bot.py:238) INFO You're now connected to https://lichess.org/ and awaiting challenges.
+2024-08-11 19:36:36,828 urllib3.connectionpool (connectionpool.py:453) DEBUG https://lichess.org:443 "GET /api/account/playing HTTP/1.1" 200 17
+2024-08-11 19:36:36,830 lib.matchmaking (matchmaking.py:293) INFO Next challenge will be created after 20:06:36 (0 challenges in last 24 hours)
+2024-08-11 19:36:40,478 __main__ (lichess-bot.py:414) DEBUG Event: {'type': 'challenge', 'challenge': {'id': 'LZvpDcQm', 'url': 'https://lichess.org/LZvpDcQm', 'status': 'created', 'challenger': {'id': 'zekkaone', 'name': 'ZekkaOne', 'rating': 1500, 'title': None, 'provisional': True, 'online': True, 'lag': 4}, 'destUser': {'id': 'napoleon_engine', 'name': 'Napoleon_Engine', 'rating': 2000, 'title': 'BOT', 'provisional': True, 'online': True}, 'variant': {'key': 'standard', 'name': 'Standard', 'short': 'Std'}, 'rated': False, 'speed': 'correspondence', 'timeControl': {'type': 'unlimited'}, 'color': 'random', 'finalColor': 'black', 'perf': {'icon': '\ue02e', 'name': 'Correspondance'}}, 'compat': {'bot': True, 'board': True}}
+2024-08-11 19:36:40,479 __main__ (lichess-bot.py:465) INFO Accept Correspondance casual challenge from ZekkaOne (1500?) (LZvpDcQm)
+2024-08-11 19:36:40,496 urllib3.connectionpool (connectionpool.py:453) DEBUG https://lichess.org:443 "POST /api/challenge/LZvpDcQm/accept HTTP/1.1" 200 11
+2024-08-11 19:36:40,496 __main__ (lichess-bot.py:287) INFO --- Process Queued. Count: 1. IDs: {'LZvpDcQm'}
+2024-08-11 19:36:40,497 __main__ (lichess-bot.py:414) DEBUG Event: {'type': 'gameStart', 'game': {'fullId': 'LZvpDcQmxsKC', 'gameId': 'LZvpDcQm', 'fen': 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1', 'color': 'white', 'lastMove': '', 'source': 'friend', 'status': {'id': 20, 'name': 'started'}, 'variant': {'key': 'standard', 'name': 'Standard'}, 'speed': 'correspondence', 'perf': 'correspondence', 'rated': False, 'hasMoved': False, 'opponent': {'id': 'zekkaone', 'username': 'ZekkaOne', 'rating': 1500}, 'isMyTurn': True, 'compat': {'bot': True, 'board': True}, 'id': 'LZvpDcQm'}}
+2024-08-11 19:36:40,497 __main__ (lichess-bot.py:287) INFO --- Process Used. Count: 1. IDs: {'LZvpDcQm'}
+2024-08-11 19:36:40,507 urllib3.connectionpool (connectionpool.py:978) DEBUG Starting new HTTPS connection (1): lichess.org:443
+2024-08-11 19:36:40,610 urllib3.connectionpool (connectionpool.py:453) DEBUG https://lichess.org:443 "GET /api/bot/game/stream/LZvpDcQm HTTP/1.1" 200 None
+2024-08-11 19:36:40,610 __mp_main__ (lichess-bot.py:614) DEBUG Initial state: {'id': 'LZvpDcQm', 'variant': {'key': 'standard', 'name': 'Standard', 'short': 'Std'}, 'speed': 'correspondence', 'perf': {'name': 'Correspondance'}, 'rated': False, 'createdAt': 1723397800543, 'white': {'id': 'napoleon_engine', 'name': 'Napoleon_Engine', 'title': 'BOT', 'rating': 2000, 'provisional': True}, 'black': {'id': 'zekkaone', 'name': 'ZekkaOne', 'title': None, 'rating': 1500, 'provisional': True}, 'initialFen': 'startpos', 'type': 'gameFull', 'state': {'type': 'gameState', 'moves': '', 'wtime': 2147483647, 'btime': 2147483647, 'winc': 0, 'binc': 0, 'status': 'started'}}
+2024-08-11 19:36:41,592 tensorflow (tpu_cluster_resolver.py:34) DEBUG Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2024-08-11 19:36:41,782 h5py._conv (__init__.py:47) DEBUG Creating converter from 7 to 5
+2024-08-11 19:36:41,782 h5py._conv (__init__.py:47) DEBUG Creating converter from 5 to 7
+2024-08-11 19:36:41,783 h5py._conv (__init__.py:47) DEBUG Creating converter from 7 to 5
+2024-08-11 19:36:41,783 h5py._conv (__init__.py:47) DEBUG Creating converter from 5 to 7
+2024-08-11 19:36:42,384 lib.engine_wrapper (engine_wrapper.py:65) DEBUG Starting engine: ['/media/sugethan/c21cc79c-13e8-4254-97e4-4f8bb286698f/Git/Napoleon/Napoleon/engines/Napoleon']
+2024-08-11 19:36:42,385 __mp_main__ (lichess-bot.py:620) DEBUG The engine for game LZvpDcQm has pid=?
+2024-08-11 19:36:42,385 __mp_main__ (lichess-bot.py:623) INFO +++ https://lichess.org/LZvpDcQm/white Correspondance vs ZekkaOne (1500?) (LZvpDcQm)
+2024-08-11 19:36:42,385 __mp_main__ (lichess-bot.py:788) DEBUG Game state: {'type': 'gameState', 'moves': '', 'wtime': 2147483647, 'btime': 2147483647, 'winc': 0, 'binc': 0, 'status': 'started'}
+2024-08-11 19:36:42,385 lib.conversation (conversation.py:100) INFO *** https://lichess.org/LZvpDcQm/white [player] Napoleon_Engine: Hi! I'm Napoleon_Engine. Good luck! Type !help for a list of commands I can respond to.
+2024-08-11 19:36:42,386 urllib3.connectionpool (connectionpool.py:978) DEBUG Starting new HTTPS connection (2): lichess.org:443
+2024-08-11 19:36:42,538 urllib3.connectionpool (connectionpool.py:453) DEBUG https://lichess.org:443 "POST /api/bot/game/LZvpDcQm/chat HTTP/1.1" 200 11
+2024-08-11 19:36:42,539 lib.conversation (conversation.py:100) INFO *** https://lichess.org/LZvpDcQm/white [spectator] Napoleon_Engine: Hi! I'm Napoleon_Engine. Type !help for a list of commands I can respond to.
+2024-08-11 19:36:42,577 urllib3.connectionpool (connectionpool.py:453) DEBUG https://lichess.org:443 "POST /api/bot/game/LZvpDcQm/chat HTTP/1.1" 200 11
+2024-08-11 19:36:42,577 __mp_main__ (lichess-bot.py:779) INFO 
+2024-08-11 19:36:42,578 __mp_main__ (lichess-bot.py:780) INFO move: 1
+2024-08-11 19:36:42,578 lib.engine_wrapper (engine_wrapper.py:705) INFO Searching for time 10 seconds for game LZvpDcQm
+2024-08-11 19:36:57,682 lib.engine_wrapper (engine_wrapper.py:330) INFO Source: Engine
+2024-08-11 19:36:57,683 urllib3.connectionpool (connectionpool.py:273) DEBUG Resetting dropped connection: lichess.org
+2024-08-11 19:36:57,814 urllib3.connectionpool (connectionpool.py:453) DEBUG https://lichess.org:443 "POST /api/bot/game/LZvpDcQm/move/a2a3?offeringDraw=false HTTP/1.1" 200 11
+2024-08-11 19:36:57,815 __mp_main__ (lichess-bot.py:788) DEBUG Game state: {'type': 'chatLine', 'room': 'player', 'username': 'Napoleon_Engine', 'text': "Hi! I'm Napoleon_Engine. Good luck! Type !help for a list of commands I can respond to."}
+2024-08-11 19:36:57,815 lib.conversation (conversation.py:58) INFO *** https://lichess.org/LZvpDcQm/white [player] Napoleon_Engine: Hi! I'm Napoleon_Engine. Good luck! Type !help for a list of commands I can respond to.
+2024-08-11 19:36:57,815 __mp_main__ (lichess-bot.py:788) DEBUG Game state: {'type': 'chatLine', 'room': 'spectator', 'username': 'Napoleon_Engine', 'text': "Hi! I'm Napoleon_Engine. Type !help for a list of commands I can respond to."}
+2024-08-11 19:36:57,816 lib.conversation (conversation.py:58) INFO *** https://lichess.org/LZvpDcQm/white [spectator] Napoleon_Engine: Hi! I'm Napoleon_Engine. Type !help for a list of commands I can respond to.
+2024-08-11 19:36:57,816 __mp_main__ (lichess-bot.py:788) DEBUG Game state: {'type': 'gameState', 'moves': 'a2a3', 'wtime': 2147483647, 'btime': 2147483647, 'winc': 0, 'binc': 0, 'status': 'started'}
+2024-08-11 19:37:00,130 __mp_main__ (lichess-bot.py:788) DEBUG Game state: {'type': 'gameState', 'moves': 'a2a3 d7d5', 'wtime': 2147483647, 'btime': 2147483647, 'winc': 0, 'binc': 0, 'status': 'started'}
+2024-08-11 19:37:00,130 __mp_main__ (lichess-bot.py:779) INFO 
+2024-08-11 19:37:00,131 __mp_main__ (lichess-bot.py:780) INFO move: 2
+2024-08-11 19:37:00,131 lib.engine_wrapper (engine_wrapper.py:692) INFO Searching for time 60 seconds for game LZvpDcQm
+2024-08-11 19:37:08,623 __main__ (lichess-bot.py:414) DEBUG Event: {'type': 'gameFinish', 'game': {'fullId': 'LZvpDcQmxsKC', 'gameId': 'LZvpDcQm', 'fen': 'rnbqkbnr/ppp1pppp/8/3p4/8/P7/1PPPPPPP/RNBQKBNR w KQkq - 0 2', 'color': 'white', 'lastMove': 'd7d5', 'source': 'friend', 'status': {'id': 31, 'name': 'resign'}, 'variant': {'key': 'standard', 'name': 'Standard'}, 'speed': 'correspondence', 'perf': 'correspondence', 'rated': False, 'hasMoved': True, 'opponent': {'id': 'zekkaone', 'username': 'ZekkaOne', 'rating': 1500}, 'isMyTurn': False, 'winner': 'white', 'compat': {'bot': True, 'board': True}, 'id': 'LZvpDcQm'}}
