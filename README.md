@@ -65,11 +65,11 @@ The engine has been given 280 000 positions evaluated by stockfish (20% have bee
 
 The Monte-Carlo Tree Search opperate using the followin UCB score to navigate nodes :
 
-$$ UCB = player * [(1-exploration) \times prediction + exploration \times value] + \frac{\log(1+N)}{1+n}  $$
+$$ UCB = player * (1-exploration) \times prediction + exploration \times win_probability + \frac{\log(1+N)}{1+n}  $$
 
 * Player is 1 if white to play and -1 if black to play.
 * Prediction is the neural network evaluation of the node's position.
-* Value is the evaluation from the MCTS' simulations.
+* Win_probability is the probabilty of winning according to the MCTS' simulations.
 * Exploration is a parameter between 0 and 1.
 * N is the number of times the father node has been visitied
 * n is the number of times the node has been visited. 

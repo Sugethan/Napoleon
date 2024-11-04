@@ -27,9 +27,8 @@ class node:
         
         self.sons = [] # List of sons
         l = len(self.moves_to_explore)
-        self.sons_proba = np.zeros(l) # Number of times it has been visited / Number of times the father node has been visited
-        self.sons_value = np.zeros(l)
-        self.sons_normalized_value = np.zeros(l)
+        self.sons_proba = np.zeros(l) # Probability of winning
+        self.sons_value = np.zeros(l) # Number of wins of sons
         self.sons_visits = np.zeros(l)
         self.sons_ucb = None
         self.sons_v = None  # List of the neural network evalutation of the node's sons
@@ -39,7 +38,7 @@ class node:
         pass
 
     def comp_usb(self, exploration): # Computes the UCB score of the node's all sons
-        self.sons_ucb = self.player * ((1-exploration) * self.sons_v + self.sons_normalized_value * exploration) + np.log(1 + self.father.sons_visits[self.index]) / (1 + self.sons_visits)
+        self.sons_ucb = self.player * (1-exploration) * self.sons_v + self.sons_proba * exploration + np.log(1 + self.father.sons_visits[self.index]) / (1 + self.sons_visits)
 
     def update(self, exploration: float, result: int): # Update the properties of the node and its sons
         pass
@@ -97,5 +96,5 @@ class node:
         pass
 
     def choose_son(self, exploration):
-        self.sons_ucb = self.player * ((1-exploration) * self.sons_v + self.sons_normalized_value * exploration)
+        self.sons_ucb = self.player * (1-exploration) * self.sons_v + self.sons_proba * exploration
         return self.sons[np.argmax(self.sons_ucb)]
